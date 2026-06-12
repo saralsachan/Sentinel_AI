@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 import uuid
 
 #Custom User (role based RBAC)
-class User(AbstractUser):
+class User(AbstractUser): #Abstract user provides fiels like email, usernamce, password etc.
     ROLE_CHOICES = (
         ('admin', 'Admin'),
         ('operator', 'Operator'),
@@ -25,7 +25,7 @@ class CameraNode(models.Model):
     def __str__(self):
         return f"Camera @ {self.location}"
     
-#Incident ()Notice the foreign key
+#Incident (Notice the foreign key)
 class Incident(models.Model):
     SEVERITY_CHOICES = (
         ('low', 'Low'),
